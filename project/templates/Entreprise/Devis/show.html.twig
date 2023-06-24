@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Devis{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ asset('./assets/css/dashbord.css') }}">
+  <div class="user"> <h1>Devis</h1></div> 
+
+    <table class="table">
+        <tbody>
+          
+            <tr>
+                <th>Services</th>
+                <td>{{ devi.services }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ devi.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Deuxieme_prenom</th>
+                <td>{{ devi.deuxiemePrenom }}</td>
+            </tr>
+            <tr>
+                <th>Nom_de_famille</th>
+                <td>{{ devi.nomDeFamille }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ devi.email }}</td>
+            </tr>
+            <tr>
+                <th>Numero_de_telephone</th>
+                <td>{{ devi.numeroDeTelephone }}</td>
+            </tr>
+        </tbody>
+    </table>
+<div class="button">
+    <a href="{{ path('app_devis_crud_index') }}">Retour a la liste</a>
+</div>
+<div class="button">
+    <a href="{{ path('app_devis_crud_edit', {'id': devi.id}) }}">Modifier</a>
+</div>
+    {# {{ include('devis_crud/_delete_form.html.twig') }} #}
+{% endblock %}

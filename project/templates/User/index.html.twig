@@ -1,0 +1,55 @@
+{% block devis %}{% endblock %}
+{% extends 'base.html.twig' %}
+
+{% block title %}Beinvenue
+{% endblock %}
+
+{% block body %}
+	<link rel="stylesheet" href="{{ asset('./assets/css/dashbord.css') }}">
+	{% if app.user %}
+		<div class="user-info">
+			{{ app.user.nom }}
+			{{ app.user.prenom }}
+			({{app.user.userIdentifier}})
+
+		</div>
+	{% endif %}
+		<h2>Espace Employé</h2>
+	<div class="menu">
+
+		<ul>
+			<li>
+				<b>
+					Mes Tickets</b>
+				<ul class="submenu">
+					<li>
+						<a href="{{ path('indexTicketEmploye') }}">Afficher les tickets</a>
+					</li>
+					<li>
+						<a href="{{ path('newTicketEmploye') }}">Ajouter un ticket</a>
+					</li>
+				</ul>
+			</li>
+			{# <li>
+							<a href="{{ path('missions', {'id': user.id}) }}">Missions</a>
+						</li> #}
+			<li>
+				<b>
+					Missions
+				</b>
+			</li>
+			<li>
+				<b>Employé</b>
+				<ul class="submenu">
+					<li>
+						<a href="{{ path('profil.employe', {'id': user.id}) }}">Profil Employe</a>
+					</li>
+					<li>
+						<a href="{{ path('app_user_crud_edit', {'id': user.id}) }}">Modifier le profil</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+{% endblock %}

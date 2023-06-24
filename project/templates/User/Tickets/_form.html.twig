@@ -1,0 +1,37 @@
+{{ form_start(form) }}
+    <div>
+        {{ form_row(form.email, {'label': false, 'attr': {'placeholder': 'Adresse email de l\'utilisateur'}}) }}
+</div>
+
+<div>
+	{{ form_row(form.titre, {'label': false, 'attr': {'placeholder': 'Titre du ticket'}}) }}
+</div>
+
+<div>
+	{{ form_row(form.category) }}
+</div>
+{# <div>
+    {{ form_row(form.imageFilename) }}
+</div> #}
+
+{% if is_mobile() %}
+    <div>
+        {{ form_row(form.imageFilename, {'label': 'Image', 'attr': {'placeholder': 'Ajouter une image'}}) }}
+    </div>
+    <div>
+        {{ form_row(form.imageFileName, {'label': 'Image', 'attr': {'capture': 'camera'}}) }}
+    </div>
+{% else %}
+    <div>
+        {{ form_row(form.imageFilename, {'label': 'Image', 'attr': {'placeholder': 'Ajouter une image'}}) }}
+    </div>
+{% endif %}
+
+<div>
+	{{ form_row(form.description, {'label': false, 'attr': {'placeholder': 'Description de votre problème'}}) }}
+</div>
+
+<div class='btn-form'>
+	<input type="submit" value="Envoyer votre tickets">
+</div>
+{{ form_end(form) }}

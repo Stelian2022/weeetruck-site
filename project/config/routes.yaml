@@ -1,0 +1,89 @@
+controllers:
+  resource:
+    path: ../src/Controller/
+    namespace: App\Controller
+  type: attribute
+accueil:
+  path: /
+  controller: App\Controller\AccueilController::index
+  methods: [GET]
+
+login_user:
+  path: /loginUser
+  controller: App\Controller\SecurityController::loginUser
+login_entreprise:
+  path: /loginEntreprise
+  controller: App\Controller\ESecurityController::loginEntreprise
+
+# Routes pour les utilisateurs
+user_registration:
+  path: /registerUser/
+  controller: App\Controller\UserRegistrationController::registerUser
+
+# user_login:
+#     path: /loginUser/
+#     controller: App\Controller\SecurityController::loginUser
+
+# Routes pour les entreprises
+entreprise_registration:
+  path: /registerEntreprise/
+  controller: App\Controller\EntrepriseRegistrationController::registerEntreprise
+
+# entreprise_login:
+#     path: /loginEntreprise/
+#     controller: App\Controller\ESecurityController::loginEntreprise
+
+contact_form:
+  path: "/contact"
+  controller: App\Controller\ContactController::contactForm
+  methods: ["GET", "POST"]
+
+contact_succes:
+  path: /contact/success
+  controller: App\Controller\ContactController::contactSucces
+  methods: [POST]
+
+devis_reponse:
+  path: "/Devis/devis"
+  controller: App\Controller\DevisController::devis
+  methods: ["GET","POST"]
+
+
+index_post:
+  path: /
+  controller: App\Controller\AccueilController::index
+  methods: ["POST"]
+
+# comment_post:
+#   path: /
+#   controller: App\Controller\CommentController::commentPost
+#   methods: ["GET","POST"]
+
+# comment_success:
+#   path: /comment/success
+#   controller: App\Controller\CommentController::commentSuccess
+
+app_devis_crud_index:
+  path: /Entreprise/Devis/
+  controller: App\Controller\DashbordUsers\DevisCrudController::index
+  methods: GET
+
+app_devis_crud_new:
+  path: /Entreprise/Devis/new
+  controller: App\Controller\DashbordUsers\DevisCrudController::new
+  methods: [GET, POST]
+
+app_devis_crud_show:
+  path: /Entreprise/Devis/{id}
+  controller: App\Controller\DashbordUsers\DevisCrudController::show
+  methods: GET
+
+app_devis_crud_edit:
+  path: /Entreprise/Devis/{id}/edit
+  controller: App\Controller\DashbordUsers\DevisCrudController::edit
+  methods: [GET, POST]
+
+app_devis_crud_delete:
+  path: /Entreprise/Devis/{id}
+  controller: App\Controller\DashbordUsers\DevisCrudController::delete
+  methods: POST

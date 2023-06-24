@@ -1,0 +1,36 @@
+{# form.html.twig #}
+
+
+{% block content %}
+  <form method="POST" action="{{ path('contact_succes') }}">
+  {{ form_start(form) }}
+  <div class="form-group">
+    {{ form_label(form.nom) }}
+    {{ form_widget(form.nom, { 'attr': {'class': 'form-control', 'placeholder': 'Nom (nécessaire)'} }) }}
+    {{ form_errors(form.nom) }}
+  </div>
+  <div class="form-group">
+    {{ form_label(form.email) }}
+    {{ form_widget(form.email, { 'attr': {'class': 'form-control', 'placeholder': 'E-mail (nécessaire)'} }) }}
+    {{ form_errors(form.email) }}
+  </div>
+  <div class="form-group">
+    {{ form_label(form.site) }}
+    {{ form_widget(form.site, { 'attr': {'class': 'form-control', 'placeholder': 'Site'} }) }}
+    {{ form_errors(form.site) }}
+  </div>
+  <div class="form-group">
+    {{ form_label(form.message) }}
+    {{ form_widget(form.message, { 'attr': {'class': 'form-control', 'placeholder': 'Votre commentaire ici...', 'rows': 3} }) }}
+    {{ form_errors(form.message) }}
+  </div>
+  {# <div class="form-check">
+    {{ form_widget(form.saveData, { 'attr': {'class': 'form-check-input'} }) }}
+    {{ form_label(form.saveData, 'Enregistrer mon nom, mon e-mail et mon site dans le navigateur pour mon prochain commentaire.', { 'label_attr': {'class': 'form-check-label'} }) }}
+    {{ form_errors(form.saveData) }}
+  </div> #}
+  <button type="submit" class="btn btn-danger">PUBLIER LE COMMENTAIRE</button>
+  {{ form_end(form) }}
+</form>
+
+{% endblock %}

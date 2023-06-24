@@ -1,0 +1,29 @@
+{% block comment %}
+	<section id="section4">
+		<h5>Laisser un commentaire</h5>
+<form action="{{ path('comment_post') }}" method="post">
+    <div id="form">
+        <div id="form1" class="form-group">
+            <label for="nom">Nom</label>
+            {{ form_widget(commentForm.nom, {'attr': {'class': 'form-control', 'id': 'nom', 'placeholder': 'Nom (obligatoire)', 'required': true}}) }}
+            <label for="email">Email</label>
+            {{ form_widget(commentForm.email, {'attr': {'class': 'form-control', 'id': 'email', 'placeholder': 'E-mail (obligatoire)', 'required': true}}) }}
+            <label for="site">Site</label>
+            {{ form_widget(commentForm.site, {'attr': {'class': 'form-control', 'id': 'site', 'placeholder': 'Site'}}) }}
+        </div>
+        <div id="form2" class="form-group">
+            <label for="message">Commentaire</label>
+            {{ form_widget(commentForm.message, {'attr': {'class': 'form-control', 'id': 'message', 'rows': 3, 'placeholder': 'Votre commentaire ici...', 'required': true}}) }}
+        </div>
+    </div>
+    <div class="form-check">
+        {{ form_widget(commentForm.remember, {'attr': {'class': 'form-check-input', 'id': 'remember'}}) }}
+        <label class="form-check-label" for="remember">
+            Enregistrer mon nom, mon e-mail et mon site dans le navigateur pour mon prochain commentaire.
+        </label>
+    </div>
+    <button type="submit" class="btn btn-danger">PUBLIER LE COMMENTAIRE</button>
+</form>
+	</section>
+
+{% endblock %}

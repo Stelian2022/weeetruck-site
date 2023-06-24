@@ -1,0 +1,56 @@
+{% block devis %}{% endblock %}
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription Entreprise
+{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ asset('./assets/css/register.css') }}">
+	<div class="content">
+		<div class="container">
+			<div class="form signup">
+				<h2>S'inscrire</h2>
+				{{ form_start(entrepriseForm) }}
+				<div class="inputBox">
+					{{ form_widget(entrepriseForm.nom, {'required': true}) }}
+					<i class="fa-regular fa-user"></i>
+					<span>Nom</span>
+				</div>
+				<div class="inputBox">
+					{{ form_widget(entrepriseForm.email, {'required': true}) }}
+					<i class="fa-regular fa-envelope"></i>
+					<span>Adresse email</span>
+				</div>
+
+				<div class="inputBox">
+					{{ form_widget(entrepriseForm.plainPassword, {'required': true}) }}
+					<i class="fa-solid fa-lock"></i>
+					<span>Créer mot de passe</span>
+				</div>
+
+				<div class="inputBox">
+					{{ form_widget(entrepriseForm.confirmPassword, {'required': true}) }}
+					<i class="fa-solid fa-lock"></i>
+					<span>Confirmer mot de passe</span>
+				</div>
+
+				<div class="agree">
+					{{ form_widget(entrepriseForm.agreeTerms) }}
+					{{ form_label(entrepriseForm.agreeTerms, 'Accepter les termes et conditions') }}
+				</div>
+
+				{% if passError is defined %}
+					<div class="alert alert-danger" role="alert">{{ passError }}</div>
+				{% endif %}
+				<div class="inputBox">
+					<input type="submit" value="VALIDER">
+
+				</div>
+				{{ form_end(entrepriseForm) }}
+				<p>Déjà membre?
+					<a href="{{ path('login_entreprise') }}" class="login">Se Connecter</a>
+				</p>
+			</div>
+		</div>
+	</div>
+{% endblock %}

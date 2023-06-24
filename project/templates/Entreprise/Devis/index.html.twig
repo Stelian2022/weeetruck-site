@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Devis index{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ asset('./assets/css/dashbord.css') }}">
+<div class="user"><h1>Mes Devis</h1></div>
+     <div class="button">
+			<a href="{{ path('entreprise') }}">Retour au tableau de bord</a>
+		</div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                {# <th>Id</th> #}
+                <th>Services</th>
+                <th>Prénom</th>
+                <th>Deuxieme Prénom</th>
+                <th>Nom de famille</th>
+                <th>Email</th>
+                <th>Téléphone</th>
+                 <th>actions</th> 
+            </tr>
+        </thead>
+        <tbody>
+        {% for devi in devis %}
+            <tr>
+                {# <td>{{ devi.id }}</td> #}
+                <td>{{ devi.services }}</td>
+                <td>{{ devi.prenom }}</td>
+                 <td>{{ devi.deuxiemePrenom }}</td> 
+                <td>{{ devi.nomDeFamille }}</td>
+                <td>{{ devi.email }}</td>
+                <td>{{ devi.numeroDeTelephone }}</td>
+                <td>
+                <div class="button">
+                    <a href="{{ path('app_devis_crud_show', {'id': devi.id}) }}">Afficher</a>
+                    <a href="{{ path('app_devis_crud_edit', {'id': devi.id}) }}">Modifier</a>
+                    </div>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">Pas de devis</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+<div class="button">
+    <a href="{{ path('app_devis_crud_new') }}">Envoyer un Devis</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}A propos Weeeetruck
+{% endblock %}
+
+{% block devis_reponse %}
+
+{% if cout is defined %}
+         <p style="padding-top: 1.5rem; text-align:center; color: black"> Le devis vous reviens à {{cout}} euros </p>
+    {% endif %}
+    
+        <p style="padding-top: 1.5rem; text-align:center; color: black">Votre simulation vous semble intéressante ?</p>
+        <button class="btn btn-secondary" style="background-color: white; color: black; border: 1px solid white; margin: 1rem"><a href="{{ path('register_user') }}">Passé à la suite </a></button>
+
+
+        <button  class="btn btn-secondary" href="#" style="background-color: white; color: black; border: 1px solid white; margin: 1rem">Refaire une simulation </button>
+    </body>
+   {% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vos Tickets
+{% endblock %}
+
+{% block body %}
+	<section class="userTicket">
+		<h1>Vos Tickets</h1>
+		 <div class="button">
+			<a href="{{ path('entreprise') }}">Retour au tableau de bord</a>
+		</div>
+
+		<div class="tickets">
+			{% for ticket in tickets %}
+				<div class="ticket">
+					<h3>{{ ticket.titre }}</h3>
+					<p>{{ ticket.description }}</p>
+
+					<div class="button">
+						<a href="{{ path('showTicketEntreprise', {'id': ticket.id}) }}">Afficher</a>
+					</div>
+
+					{# 
+					                   <div class="button">
+					                       <a href="{{ path('editTicketEntreprise', {'id': ticket.id}) }}">Editer</a>
+					                   </div> 
+					                   #}
+				</div>
+			{% else %}
+				<p class="emptyTicket">Vous n'avez aucun ticket en cours.</p>
+			{% endfor %}
+		</div>
+
+		<div class="button">
+			<a href="{{ path('newTicketEntreprise') }}">Ajouter un ticket</a>
+		</div>
+        </div>
+       
+	</section>
+{% endblock %}

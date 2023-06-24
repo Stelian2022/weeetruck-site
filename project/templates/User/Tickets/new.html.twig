@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un ticket
+{% endblock %}
+
+{% block body %}
+<section class="userForm">
+        <h1>Créer un ticket</h1>
+  <div class="button">
+            <a href="{{ path('indexTicketEmploye') }}">Retour au tickets</a>
+        </div>
+        {{ include('User/Tickets/_form.html.twig') }}
+
+      
+    </section>
+{% endblock %}

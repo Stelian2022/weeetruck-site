@@ -1,0 +1,58 @@
+{% block devis %}{% endblock %}
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue
+{% endblock %}
+
+
+{% block body %}
+	<link rel="stylesheet" href="{{ asset('./assets/css/dashbord.css') }}">
+	{% if app.user %}
+		<div class="user-info">
+			{{ app.user.nom }}
+			({{app.user.userIdentifier}})
+		</div>
+	{% endif %}
+	<h2>Espace Entreprise</h2>
+	<div class="menu">
+		
+		<ul>
+			<li>
+				<b>
+					Mes Tickets</b>
+				<ul class="submenu">
+					<li>
+						<a href="{{ path('indexTicketEntreprise') }}">Afficher les tickets</a>
+					</li>
+					<li>
+						<a href="{{ path('newTicketEntreprise') }}">Ajouter un ticket</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<b>Mes Devis</b>
+				<ul class="submenu">
+					<li>
+						<a href="{{ path('app_devis_crud_index') }}">Afficher les devis</a>
+					</li>
+					<li>
+						<a href="{{ path('app_devis_crud_new') }}">Ajouter un devis</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<b>Entreprise</b>
+				<ul class="submenu">
+					<li>
+						<a href="{{ path('profil.entreprise', {'id': entreprise.id}) }}">Profil Entreprise</a>
+					</li>
+					<li>
+						<a href="{{ path('app_entreprise_crud_edit', {'id': entreprise.id}) }}">Modifier le profil</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<h1>Données de l'API</h1>
+
+{% for item in data %}
+    <p>{{ item }}</p>
+{% endfor %}
+
+{% endblock %}

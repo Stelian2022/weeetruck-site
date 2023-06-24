@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ticket
+{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('bundles/liipimagine/css/liip-imagine.css') }}" />
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/liipimagine/js/liip-imagine.js') }}"></script>
+{% endblock %}
+{% block body %}
+	<section class="userShow">
+		<h1>Votre Ticket</h1>
+
+		<div class="ticket">
+			<h3>{{ ticket.titre }}</h3>
+			<p>{{ ticket.description }}</p>
+			  {% if ticket.imageFilename %}
+        <img src="{{ asset('uploads/images/' ~ ticket.imageFilename) | imagine_filter('your_filter_name') }}" alt="Ticket Image">
+    {% endif %}
+		</div>
+
+		<div class="button">
+			<a href="{{ path('indexTicketEntreprise') }}">Retour à la liste</a>
+		</div>
+
+		{#
+		        <div class="button">
+		            <a href="{{ path('editTicketEntreprise', {'id': ticket.id}) }}">Editer le ticket</a>
+		            
+		        </div>
+		        #}
+		<div class="button">
+			{{ include('Entreprise/Tickets/_delete_form.html.twig') }}</div>
+	</section>
+{% endblock %}

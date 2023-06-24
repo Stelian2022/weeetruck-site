@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Contact Page
+{% endblock %}
+{% block body %}
+	<link rel="stylesheet" href="{{ asset('./assets/css/contact.css') }}"/>
+	<div class="containerContact">
+		<div class="item">
+			<div class="contact">
+				<div class="first-text">WEEE-TRUCK</div>
+				<img src="{{ asset('assets/img/office-contact.jpg') }}" alt="" class="image">
+				<div class="social-links">
+					<span class="second-text">Rejoignez-nous:</span>
+					<ul class="social-media">
+						<li>
+							<a href="#">
+								<i class="fa-brands fa-facebook-f"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i class="fa-brands fa-linkedin-in"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i class="fa-brands fa-twitter"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i class="fa-brands fa-youtube"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="submit-form">
+				<h4 class="third-text text">CONTACTEZ-NOUS</h4>
+				{{ form_start(form) }}
+				<form method="POST" action="{{ path('contact_succes') }}">
+
+					<div class="input-box">
+
+						{{ form_widget(form.nom, { 'attr': {'class': 'input', 'placeholder': 'Nom (nécessaire)'} }) }}
+						{{ form_errors(form.nom) }}
+					</div>
+					<div class="input-box">
+
+						{{ form_widget(form.prenom, { 'attr': {'class': 'input', 'placeholder': 'Prénom (nécessaire)'} }) }}
+						{{ form_errors(form.prenom) }}
+					</div>
+					<div class="input-box">
+
+						{{ form_widget(form.email, { 'attr': {'class': 'input', 'placeholder': 'E-mail (nécessaire)'} }) }}
+						{{ form_errors(form.email) }}
+					</div>
+
+					<div class="input-box">
+
+						{{ form_widget(form.message, { 'attr': {'class': 'input', 'placeholder': 'Votre commentaire ici...', 'rows': 3} }) }}
+						{{ form_errors(form.message) }}
+					</div>
+					{# <div class="form-check">
+																				    {{ form_widget(form.saveData, { 'attr': {'class': 'form-check-input'} }) }}
+																				    {{ form_label(form.saveData, 'Enregistrer mon nom, mon e-mail et mon site dans le navigateur pour mon prochain commentaire.', { 'label_attr': {'class': 'form-check-label'} }) }}
+																				    {{ form_errors(form.saveData) }}
+																				  </div> #}
+					<input type="submit" class="btn">Envoyer</button>
+				{{ form_end(form) }}
+			</form>
+		</div>
+	</div>
+</div>{% endblock %}

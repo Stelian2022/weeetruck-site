@@ -1,0 +1,191 @@
+/* Section qui nous sommes et présentation de notre entreprise */
+.about {
+  margin: 2rem 0 0 0;
+}
+
+.hero-about {
+  margin: 0 1rem 2rem 1rem;
+}
+
+.hero-about .presentation h2 {
+  font-size: 1.5rem;
+}
+
+.hero-about .img-presentation {
+  display: none;
+}
+
+/* Nos avantages, pourquoi nous choisir */
+.ourAdvantages {
+  background-color: rgba(200, 200, 200, 0.3);
+
+  padding: 1.5rem 1rem;
+}
+
+.ourAdvantages h2 {
+  text-align: center;
+
+  font-size: 1.2rem;
+}
+
+/* Valeur de l'entreprise */
+.companyValues {
+  background-color: rgb(145, 46, 46);
+  color: white;
+
+  padding: 2rem 1rem;
+}
+
+.companyValues .text-value h2 {
+  text-align: center;
+
+  font-size: 1.5rem;
+}
+
+.companyValues .img-value {
+  display: none;
+}
+
+/* Nos autres assets comme l'impact écologique, la sécurité et la satisfaction de nos clients */
+.otherAssets {
+  margin: 3rem 1rem;
+}
+
+.otherAssets h3 {
+  font-size: 1.2rem;
+}
+
+/* conclu */
+.conclusion {
+  background-color: rgba(200, 200, 200, 0.3);
+  padding: 2rem 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  /* Section qui nous sommes et présentation de notre entreprise avec image de fond */
+  .hero-about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-about .presentation {
+    width: 60%;
+
+    margin-right: 0.2rem;
+  }
+
+  .hero-about .img-presentation {
+    display: block;
+
+    width: 40%;
+  }
+
+  .hero-about .img-presentation img {
+    width: 100%;
+
+    border-bottom-left-radius: 40%;
+  }
+
+  /* Valeur de l'entreprise */
+  .companyValues {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .companyValues .text-value {
+    width: 60%;
+
+    padding-right: 0.5rem;
+  }
+
+  .companyValues .text-value h2 {
+    text-align: left;
+
+    margin-bottom: 1rem;
+  }
+
+  .companyValues .img-value {
+    display: block;
+
+    width: 40%;
+  }
+
+  .companyValues .img-value img {
+    width: 100%;
+
+    border-bottom-left-radius: 50%;
+  }
+
+  /* Nos autres assets comme l'impact écologique, la sécurité et la satisfaction de nos clients */
+  .otherAssets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .security-asset {
+    width: 32%;
+  }
+
+  .environment-asset {
+    width: 32%;
+  }
+
+  .satisfaction-asset {
+    width: 32%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .about {
+    margin-top: 5rem;
+  }
+
+  /* Section qui nous sommes et présentation de notre entreprise avec image de fond */
+  .hero-about {
+    margin: 0 auto 5rem auto;
+
+    width: 90%;
+  }
+
+  .hero-about .presentation {
+    width: 50%;
+  }
+
+  .hero-about .img-presentation {
+    width: 400px;
+  }
+
+  /* Nos avantages, pourquoi nous choisir */
+  .ourAdvantages {
+    padding: 1.5rem 11rem;
+  }
+
+  /* Valeur de l'entreprise */
+  .companyValues {
+    padding: 3rem;
+  }
+
+  .companyValues .text-value {
+    width: 50%;
+  }
+
+  .companyValues .img-value {
+    width: 400px;
+  }
+
+  /* Nos autres assets comme l'impact écologique, la sécurité et la satisfaction de nos clients */
+  .otherAssets {
+    margin: 8rem auto;
+    width: 90%;
+  }
+
+  /* conclu */
+  .conclusion {
+    background-color: rgba(200, 200, 200, 0.3);
+    text-align: center;
+  }
+}

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ticket
+{% endblock %}
+
+{% block body %}
+	<section class="userShow">
+		<h1>Votre Ticket</h1>
+
+		<div class="ticket">
+			<h3>{{ ticket.titre }}</h3>
+			<p>{{ ticket.description }}</p>
+		</div>
+
+		<div class="button">
+			<a href="{{ path('indexTicketEmploye') }}">Retour au tickets</a>
+		</div>
+
+		{#
+		        <div class="button">
+		            <a href="{{ path('editTicketEntreprise', {'id': ticket.id}) }}">Editer le ticket</a>
+		            
+		        </div>
+		        #}
+		<div class="button">
+			{{ include('User/Tickets/_delete_form.html.twig') }}</div>
+	</section>
+
+
+{% endblock %}

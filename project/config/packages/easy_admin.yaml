@@ -1,0 +1,7 @@
+# easy_admin:
+#   entities:
+#     Ticket:
+#       class: App\Entity\Ticket
+#       list:
+#         fields:
+#           - { property: 'imagePath', label: 'Image', type: 'image' }

@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Entreprise{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ asset('./assets/css/dashbord.css') }}">
+   <div class="user">
+    <h1>Modifier Entreprise</h1>
+</div>
+    {{ include('entreprise_crud/_form.html.twig', {'button_label': 'Modifier'}) }}
+<div class="button">
+    <a href="{{ path('profil.entreprise', {'id': entreprise.id}) }}">Retour au profil</a>
+</div>
+    {# {{ include('entreprise_crud/_delete_form.html.twig') }} #}
+   
+{% endblock %}

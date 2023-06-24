@@ -1,0 +1,71 @@
+{% block devis %}
+<link rel="stylesheet" href="{{ asset('./assets/css/devis.css') }}">
+<!-- Button trigger modal -->
+						<button class="d-block mt-5 btn btn-primary mx-auto" data-bs-toggle="modal" data-bs-target="#modal1" style="background-color:red; border:1px solid red; box-shadow:0 0 0 0.25rem rgb(246 52 52 / 50%); position: absolute; left: 15rem; top: 3rem;">Demande de devis</button>
+
+						<!-- Modal -->
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</section>
+	{# Affichage formulaire devis modal #}
+	<div class="modal fade" id="modal1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" aria-labelledby="modal title">
+						Devis
+					</h5>
+					<button class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="box-shadow:0 0 0 0.25rem rgb(246 52 52 / 50%)">X</button>
+				</div>
+				<div class="modal-boddy" aria-describedby="content">
+					<div class="content">
+						{{ form_start(devistype)}}
+						<div class="container">
+							<div class="form signup">
+
+								<div class="form-group">
+									{{ form_row(devistype.prenom)}}
+								</div>
+
+
+								<div class="form-group">
+									{{ form_row(devistype.nom_de_famille)}}
+								</div>
+
+								<div class="form-group">
+									{{ form_row(devistype.email)}}
+								</div>
+
+								<div class="form-group">
+									{{ form_row(devistype.numero_de_telephone)}}
+								</div>
+
+								<div class="form-group">
+									<select name="service" class="form-group">
+										<option value="">Choisir un service</option>
+										<option value="transport">Transport</option>
+										<option value="covoyage">Covoyage</option>
+									</select>
+								</div>
+
+								<div class="form-group">
+									<label for="textarea">Notes complémentaires</label>
+									<textarea name="note" id="textarea" cols="40" rows="5" class="form-control"></textarea>
+								</div>
+
+								<button type="submit" class="btn btn-primary">Envoyer</button>
+							</div>
+						</div>
+						{{ form_end(devistype) }}
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+				</div>
+			</div>
+		</div>
+	</div>
+    {% endblock %}

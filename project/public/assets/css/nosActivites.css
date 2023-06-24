@@ -1,0 +1,36 @@
+.nosActivite{
+  padding: 0 2rem 0 2rem;
+}
+.nosActivite h2 {
+  text-align: center;
+  padding: 1rem;
+}
+.nosActivite p {
+  text-align: center;
+ 
+}
+#btn {
+display: flex;
+justify-content: center;
+}
+#paragraphe{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+#paragraph p{
+font-weight: 700;
+
+}
+@media(max-width: 768px){
+
+    #paragraphe{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+    #paragraphe div{
+       width: 100%;
+    }
+}
